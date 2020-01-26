@@ -53,7 +53,7 @@ message "-----> Installing Dart VM via URL $DART_SDK_URL"
 cd $CACHE_DIR
 
 message "just gonna directly install this particular flutter sdk"
-curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xzf -
+curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xvf -
 message "lets hope that worked"
 
 case "${DART_SDK_URL: -3}" in
