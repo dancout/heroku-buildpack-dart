@@ -136,6 +136,12 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
             message 'Building with "flutter build web"'
             #/app/dart-sdk/bin/pub build
             flutter build web
+            
+            pwd
+            cd build
+            pwd
+            cd web
+            
         else
             message "Building with \"$DART_BUILD_CMD\""
             eval $DART_BUILD_CMD
