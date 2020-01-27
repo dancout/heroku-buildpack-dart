@@ -113,6 +113,10 @@ message 'going to delete the dev folder'
 rm -rf flutter/dev
 message 'deleted flutter/dev folder'
 
+message 'going to delete the .pub_cache folder'
+rm -rf flutter/.pub_cache
+message 'deleted flutter/.pub_cache folder'
+
 message "enabling flutter web here"
 flutter config --enable-web
 message "assuming that flutter config --enable-web worked out"
