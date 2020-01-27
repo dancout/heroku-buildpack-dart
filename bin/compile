@@ -117,6 +117,10 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
     #/app/dart-sdk/bin/flutter pub get
     #/app/flutter/bin/flutter pub get
     flutter pub get
+    
+    message "enabling flutter web here"
+    flutter config --enable-web
+    message "assuming that flutter config --enable-web worked out"
 
     #update PATH variable for pub-cache/bin folder
     message "*** Updating PATH with pub-cache/bin folder"
