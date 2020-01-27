@@ -109,6 +109,10 @@ message 'going to delete the examples folder'
 rm -rf flutter/examples
 message 'deleted flutter/examples folder'
 
+message 'going to delete the packages folder'
+rm -rf flutter/packages
+message 'deleted flutter/packages folder'
+
 message 'going to delete the dev folder'
 rm -rf flutter/dev
 message 'deleted flutter/dev folder'
