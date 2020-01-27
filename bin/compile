@@ -89,7 +89,7 @@ message "-----> Dart reports version: $CAN_DART_RUN"
 # MAYBE REMOVE ME
 message 'going to try deleting the entire CACHE_DIR'
 cd ..
-rmdir -rf $CACHE_DIR
+rm -rf $CACHE_DIR
 message 'seemingly successful delete of cache_dir'
 
 cd $BUILD_DIR
