@@ -52,10 +52,6 @@ message "-----> Installing Dart VM via URL $DART_SDK_URL"
 
 cd $CACHE_DIR
 
-message "just gonna directly install this particular flutter sdk"
-curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xJf -
-message "lets hope that worked"
-
 case "${DART_SDK_URL: -3}" in
   tar)
     message "SDK: tarball detected"
@@ -91,6 +87,10 @@ CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
 message "-----> Dart reports version: $CAN_DART_RUN"
 
 cd $BUILD_DIR
+
+message "just gonna directly install this particular flutter sdk"
+curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xJf -
+message "lets hope that worked"
 
 for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cache`; do
     pub_dir=`dirname $filename`
