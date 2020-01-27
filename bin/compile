@@ -99,9 +99,9 @@ curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutt
 message "lets hope that worked"
 
 pwd
-message 'going to delete the examples folder'
-rm -rf flutter/examples
-message 'deleted flutter/examples folder'
+#message 'going to delete the examples folder'
+#rm -rf flutter/examples
+#message 'deleted flutter/examples folder'
 
 message "exporting path now"
 export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
@@ -117,7 +117,7 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
     pub_dir=`dirname $filename`
     message "*** Found pubspec.yaml in $BUILD_DIR/$pub_dir"
     cd $BUILD_DIR/$pub_dir
-
+    pwd
     message "*** Running flutter pub get"
 
     #/app/dart-sdk/bin/flutter pub --version
