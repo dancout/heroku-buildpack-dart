@@ -96,11 +96,11 @@ message "exporting path now"
 export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
 message "hopefully that worked"
 
-cd flutter
-for entry in *
-do
-  echo "$entry"
-done
+#cd flutter
+#for entry in *
+#do
+#  echo "$entry"
+#done
 
 for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cache`; do
     pub_dir=`dirname $filename`
