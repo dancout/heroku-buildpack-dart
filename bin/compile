@@ -121,6 +121,10 @@ message 'going to delete the flutter/bin/cache/pkg folder'
 rm -rf flutter/bin/cache/pkg
 message 'deleted flutter/bin/cache/pkg folder'
 
+message 'going to delete the flutter/bin/cache/artifacts folder'
+rm -rf flutter/bin/cache/artifacts
+message 'deleted flutter/bin/cache/artifacts folder'
+
 message "enabling flutter web here"
 flutter config --enable-web
 message "assuming that flutter config --enable-web worked out"
