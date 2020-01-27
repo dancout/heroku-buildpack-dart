@@ -93,6 +93,10 @@ rm -rf $CACHE_DIR
 message 'seemingly successful delete of cache_dir'
 
 cd $BUILD_DIR
+pwd
+message 'going to delete the examples folder'
+rm -rf flutter/examples
+message 'deleted flutter/examples folder'
 
 message "just gonna directly install this particular flutter sdk"
 curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xJf -
