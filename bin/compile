@@ -109,6 +109,10 @@ message 'going to delete the examples folder'
 rm -rf flutter/examples
 message 'deleted flutter/examples folder'
 
+message 'going to delete the dev folder'
+rm -rf flutter/dev
+message 'deleted flutter/dev folder'
+
 message "enabling flutter web here"
 flutter config --enable-web
 message "assuming that flutter config --enable-web worked out"
