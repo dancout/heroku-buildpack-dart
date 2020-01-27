@@ -117,6 +117,10 @@ message 'going to delete the .pub_cache folder'
 rm -rf flutter/.pub_cache
 message 'deleted flutter/.pub_cache folder'
 
+message 'going to delete the flutter/bin/cache/pkg folder'
+rm -rf flutter/bin/cache/pkg
+message 'deleted flutter/bin/cache/pkg folder'
+
 message "enabling flutter web here"
 flutter config --enable-web
 message "assuming that flutter config --enable-web worked out"
