@@ -103,6 +103,10 @@ pwd
 #rm -rf flutter/examples
 #message 'deleted flutter/examples folder'
 
+message 'going to delete the cache/dart-sdk folder'
+rm -rf flutter/bin/cache/dart-sdk
+message 'finished deleting cache/dart-sdk'
+
 message "exporting path now"
 export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
 message "hopefully that worked"
