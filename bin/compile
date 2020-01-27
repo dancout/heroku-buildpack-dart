@@ -107,6 +107,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
     #/app/dart-sdk/bin/flutter pub --version
 
+    pwd
+
     #start pub from the /app folder to have correct symlink paths
     #/app/dart-sdk/bin/flutter pub get
     /app/flutter/bin/flutter pub get
