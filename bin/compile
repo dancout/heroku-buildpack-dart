@@ -92,6 +92,11 @@ message "just gonna directly install this particular flutter sdk"
 curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xJf -
 message "lets hope that worked"
 
+for entry in *
+do
+  echo "$entry"
+done
+
 for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cache`; do
     pub_dir=`dirname $filename`
     message "*** Found pubspec.yaml in $BUILD_DIR/$pub_dir"
