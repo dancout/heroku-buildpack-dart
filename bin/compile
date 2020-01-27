@@ -86,6 +86,12 @@ message "-----> Dart cmd found at $DART_BIN"
 CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
 message "-----> Dart reports version: $CAN_DART_RUN"
 
+# MAYBE REMOVE ME
+message 'going to try deleting the entire CACHE_DIR'
+cd ..
+rmdir -rf $CACHE_DIR
+message 'seemingly successful delete of cache_dir'
+
 cd $BUILD_DIR
 
 message "just gonna directly install this particular flutter sdk"
