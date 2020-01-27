@@ -50,41 +50,41 @@ cd $BUILD_DIR
 
 message "-----> Installing Dart VM via URL $DART_SDK_URL"
 
-cd $CACHE_DIR
+# cd $CACHE_DIR
 
-case "${DART_SDK_URL: -3}" in
-  tar)
-    message "SDK: tarball detected"
-    curl -L -k $DART_SDK_URL -o - | tar xzf -
-    ;;
-  zip)
-    message "SDK: zip detected"
-    curl -L -k $DART_SDK_URL > dart-sdk.zip ; unzip -o -q dart-sdk.zip
-    ;;
-  deb)
-    message "SDK: deb detected"
-    # TODO
-    message "Please use the .zip Dart SDK"
-    ;;
-  *)
-    message "Invalid Dart SDK URL" #kill after this or keep going in case SDK is there from last push?
-    ;;
-esac
+# case "${DART_SDK_URL: -3}" in
+#   tar)
+#     message "SDK: tarball detected"
+#     curl -L -k $DART_SDK_URL -o - | tar xzf -
+#     ;;
+#   zip)
+#     message "SDK: zip detected"
+#     curl -L -k $DART_SDK_URL > dart-sdk.zip ; unzip -o -q dart-sdk.zip
+#     ;;
+#   deb)
+#     message "SDK: deb detected"
+#     # TODO
+#     message "Please use the .zip Dart SDK"
+#     ;;
+#   *)
+#     message "Invalid Dart SDK URL" #kill after this or keep going in case SDK is there from last push?
+#     ;;
+# esac
 
-message "-----> Copy Dart binaries to app root"
-cp -r $CACHE_DIR/dart-sdk $BUILD_DIR
+# message "-----> Copy Dart binaries to app root"
+# cp -r $CACHE_DIR/dart-sdk $BUILD_DIR
 
 # we need to copy the sdk into the /app folder in order for the sdk libraries
 # to be referenced correctly
 # reason being that the /tmp folder will be deleted after build, and /app
 # resembles the location of the ready built app
-cp -r $CACHE_DIR/dart-sdk /app
+# cp -r $CACHE_DIR/dart-sdk /app
 
-DART_BIN=`ls -l /app/dart-sdk/bin/dart`
-message "-----> Dart cmd found at $DART_BIN"
+# DART_BIN=`ls -l /app/dart-sdk/bin/dart`
+# message "-----> Dart cmd found at $DART_BIN"
 
-CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
-message "-----> Dart reports version: $CAN_DART_RUN"
+# CAN_DART_RUN=`/app/dart-sdk/bin/dart --version`
+# message "-----> Dart reports version: $CAN_DART_RUN"
 
 # MAYBE REMOVE ME
 message 'going to try deleting the entire CACHE_DIR'
@@ -102,10 +102,6 @@ pwd
 #message 'going to delete the examples folder'
 #rm -rf flutter/examples
 #message 'deleted flutter/examples folder'
-
-message 'going to delete the cache/dart-sdk folder'
-rm -rf flutter/bin/cache/dart-sdk
-message 'finished deleting cache/dart-sdk'
 
 message "exporting path now"
 export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
