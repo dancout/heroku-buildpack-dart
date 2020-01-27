@@ -99,13 +99,15 @@ curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutt
 message "lets hope that worked"
 
 pwd
-#message 'going to delete the examples folder'
-#rm -rf flutter/examples
-#message 'deleted flutter/examples folder'
+
 
 message "exporting path now"
 export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
 message "hopefully that worked"
+
+message 'going to delete the examples folder'
+rm -rf flutter/examples
+message 'deleted flutter/examples folder'
 
 message "enabling flutter web here"
 flutter config --enable-web
