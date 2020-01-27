@@ -92,6 +92,7 @@ message "just gonna directly install this particular flutter sdk"
 curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xJf -
 message "lets hope that worked"
 
+cd flutter
 for entry in *
 do
   echo "$entry"
