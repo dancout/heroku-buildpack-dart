@@ -153,7 +153,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
            # cd build
             pwd
            # cd web
-            
+           ### MIGHT NEED TO REMOVE ME
+            break
         else
             message "Building with \"$DART_BUILD_CMD\""
             eval $DART_BUILD_CMD
