@@ -133,14 +133,16 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
         message "*** Running flutter build web"
         if [[ -z "$DART_BUILD_CMD" ]]
         then
+            pwd
             message 'Building with "flutter build web"'
             #/app/dart-sdk/bin/pub build
             flutter build web
+            message 'web app is built!'
             
             pwd
-            cd build
+           # cd build
             pwd
-            cd web
+           # cd web
             
         else
             message "Building with \"$DART_BUILD_CMD\""
