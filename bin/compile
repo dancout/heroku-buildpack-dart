@@ -107,6 +107,10 @@ message "exporting path now"
 export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
 message "hopefully that worked"
 
+message "enabling flutter web here"
+flutter config --enable-web
+message "assuming that flutter config --enable-web worked out"
+
 #cd flutter
 #for entry in *
 #do
@@ -116,28 +120,34 @@ message "hopefully that worked"
 for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cache`; do
     pub_dir=`dirname $filename`
     message "*** Found pubspec.yaml in $BUILD_DIR/$pub_dir"
-    cd $BUILD_DIR/$pub_dir
     pwd
-    message "*** Running flutter pub get"
-
-    #/app/dart-sdk/bin/flutter pub --version
-
-    pwd
-
-    #start pub from the /app folder to have correct symlink paths
-    #/app/dart-sdk/bin/flutter pub get
-    #/app/flutter/bin/flutter pub get
-    flutter pub get
     
-    message "enabling flutter web here"
-    flutter config --enable-web
-    message "assuming that flutter config --enable-web worked out"
+    if [[ $pub_dir =~ "I_Did" ]]
+    then
+      message 'I_Did isa within this directory name. Run our flutter pub get and such.'
+      cd $BUILD_DIR/$pub_dir
+      pwd
+      message "*** Running flutter pub get"
 
-    #update PATH variable for pub-cache/bin folder
-    message "*** Updating PATH with pub-cache/bin folder"
+      #/app/dart-sdk/bin/flutter pub --version
 
-    export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
-    source ~/.bashrc
+      pwd
+
+      #start pub from the /app folder to have correct symlink paths
+      #/app/dart-sdk/bin/flutter pub get
+      #/app/flutter/bin/flutter pub get
+      flutter pub get
+    
+
+
+      #update PATH variable for pub-cache/bin folder
+      message "*** Updating PATH with pub-cache/bin folder"
+
+      export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
+      source ~/.bashrc
+    fi
+    
+    
 
     if [ -d "web" ]
     then
