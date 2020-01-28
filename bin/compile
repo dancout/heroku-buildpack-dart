@@ -95,7 +95,7 @@ message 'seemingly successful delete of cache_dir'
 cd $BUILD_DIR
 
 message "just gonna directly install this particular flutter sdk"
-curl -L -k https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v1.8.3-beta.tar.xz -o - | tar xJf -
+curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutter_linux_v1.14.4-dev.tar.xz -o - | tar xJf -
 message "lets hope that worked"
 
 pwd
