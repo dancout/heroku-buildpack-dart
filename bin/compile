@@ -191,6 +191,10 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 flutter build web
                 message 'web app is built!'
                 
+                message 'path is:'
+                message $PATH
+                
+
                 pwd
             # cd build
                 pwd
