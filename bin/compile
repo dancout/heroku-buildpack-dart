@@ -150,6 +150,14 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
       #/app/dart-sdk/bin/flutter pub --version
 
       pwd
+      message '\n\nlook here\n\n'
+
+
+      for entry in *
+      do
+      echo "$entry"
+      done
+
 
       #start pub from the /app folder to have correct symlink paths
       #/app/dart-sdk/bin/flutter pub get
