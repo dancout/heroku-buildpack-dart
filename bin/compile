@@ -163,48 +163,50 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
       export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
       source ~/.bashrc
-    fi
     
     
 
-    if [ -d "web" ]
-    then
-        message "*** Running flutter build web"
-        if [[ -z "$DART_BUILD_CMD" ]]
+        if [ -d "web" ]
         then
-            pwd
-            #cd ..
-            #pwd
-            #cd ..
-            #pwd
-            message "print all the entries in this folder"
-            for entry in *
-            do
-              echo "$entry"
-            done
+            message "*** Running flutter build web"
+            if [[ -z "$DART_BUILD_CMD" ]]
+            then
+                pwd
+                #cd ..
+                #pwd
+                #cd ..
+                #pwd
+                message "print all the entries in this folder"
+                for entry in *
+                do
+                echo "$entry"
+                done
 
-            message 'going to delete the test folder'
-            rm -rf test
-            message 'deleted test folder'
-            
-            message 'Building with "flutter build web"'
-            #/app/dart-sdk/bin/pub build
-            flutter build web
-            message 'web app is built!'
-            
-            pwd
-           # cd build
-            pwd
-           # cd web
-           ### MIGHT NEED TO REMOVE ME
-            break
+                message 'going to delete the test folder'
+                rm -rf test
+                message 'deleted test folder'
+                
+                message 'Building with "flutter build web"'
+                #/app/dart-sdk/bin/pub build
+                flutter build web
+                message 'web app is built!'
+                
+                pwd
+            # cd build
+                pwd
+            # cd web
+            ### MIGHT NEED TO REMOVE ME
+                break
+            else
+                message "Building with \"$DART_BUILD_CMD\""
+                eval $DART_BUILD_CMD
+            fi
         else
-            message "Building with \"$DART_BUILD_CMD\""
-            eval $DART_BUILD_CMD
+            message '*** Skipping pub build because "web" folder not found'
         fi
-    else
-        message '*** Skipping pub build because "web" folder not found'
+
     fi
+
 
 done
 
