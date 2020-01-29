@@ -212,17 +212,20 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 flutter build web
                 message 'web app is built!'
                 
-                message 'path is:'
-                message $PATH
+             
 
                 message 'exporting dart path to bashrc'                
                 export PATH="$PATH:`pwd`/flutter/cache/dart-sdk/bin" >> ~/.bashrc
                 source ~/.bashrc
 
+                message 'path is:'
+                message $PATH
+
 
                       
                 message 'does dart work'
-                dart --version
+                
+                # dart --version
               
 
 
