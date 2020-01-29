@@ -154,8 +154,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
       done
       message 'stuff in there'
 
-
-    if [[ $pub_dir =~ "my_test_web" ]]
+    if true
+    # if [[ $pub_dir =~ "my_test_web" ]]
     then
       message 'I_Did isa within this directory name. Run our flutter pub get and such.'
       cd $BUILD_DIR/$pub_dir
