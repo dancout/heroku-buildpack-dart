@@ -304,7 +304,7 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 done
 
                 message 'copy the dart sdk here i guess'
-                # TODO: Try this next!
+                # TODO: Try this next! maybe?
                 # cp -r flutter/bin/cache/dart-sdk/bin /app
                 cp -r flutter/bin/cache/dart-sdk $BUILD_DIR
 
