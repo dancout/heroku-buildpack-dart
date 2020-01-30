@@ -225,7 +225,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
               flutter pub global activate webdev
 
               message 'now time to build the webdev stufff'
-              flutter pub global run webdev build
+              # flutter pub global run webdev build
+              flutter pub global run webdev build --output=web:build
 
                       
                 message 'does dart work ----   dart --version'
