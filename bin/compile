@@ -66,8 +66,8 @@ curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutt
 message "lets hope that worked"
 
 
-cp -r $CACHE_DIR/flutter $BUILD_DIR
-cp -r $CACHE_DIR/flutter /app
+cp -r $CACHE_DIR/flutter/bin $BUILD_DIR
+cp -r $CACHE_DIR/flutter/bin /app
 
 
 
@@ -133,7 +133,7 @@ pwd
 
 message "exporting path now"
 # export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
-export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
+export PATH="$PATH:`pwd`/bin" >> ~/.bashrc
 
 message "hopefully that worked"
 
@@ -263,7 +263,7 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
                 message 'exporting dart path to bashrc'                
                 # export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
-                export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
+                export PATH="$PATH:`pwd`/bin/cache/dart-sdk/bin" >> ~/.bashrc
                 source ~/.bashrc
 
                 message 'path is:'
