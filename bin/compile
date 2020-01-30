@@ -187,10 +187,9 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
     
 
         if [ -d "web" ]
-          message "*** Running flutter pub get"
-          flutter pub getthen
-
-
+        then
+            message "*** Running flutter pub get"
+            flutter pub get
             message "*** Running flutter build web"
             if [[ -z "$DART_BUILD_CMD" ]]
             then
