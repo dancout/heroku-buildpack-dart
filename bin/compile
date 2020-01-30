@@ -215,7 +215,7 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
              
 
                 message 'exporting dart path to bashrc'                
-                export PATH="$PATH:`pwd`/flutter/cache/dart-sdk/bin" >> ~/.bashrc
+                export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
                 source ~/.bashrc
 
                 message 'path is:'
@@ -223,11 +223,11 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
 
                       
-                message 'does dart work'
-                
-                # dart --version
-              
+                message 'does dart work ----   dart --version'
+                dart --version
 
+                message 'does dart work ----   /flutter/bin/cache/dart-sdk/bin/dart --version --version'
+                /flutter/bin/cache/dart-sdk/bin/dart --version
 
 
                 pwd
