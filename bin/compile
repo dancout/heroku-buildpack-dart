@@ -130,6 +130,9 @@ cd $BUILD_DIR
 
 pwd
 
+message 'removing web bc why not'
+rm -rf web
+
 
 message "exporting path now"
 # export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
@@ -231,9 +234,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
         if [ -d "web" ]
         then
-        # TODO: TOOK OUT THIS FLUTTER PUB GET. IDK IF IT'S GONNA BE AN ISSUE ==============================================================
-            # message "*** Running flutter pub get"
-            # flutter pub get
+            message "*** Running flutter pub get"
+            flutter pub get
             message "*** Running flutter build web"
             if [[ -z "$DART_BUILD_CMD" ]]
             then
