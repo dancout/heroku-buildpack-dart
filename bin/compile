@@ -221,13 +221,18 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 message 'path is:'
                 message $PATH
 
+              message 'time to active the webserver'
+              flutter pub global activate webdev
+
+              message 'now time to build the webdev stufff'
+              flutter pub global run webdev build
 
                       
                 message 'does dart work ----   dart --version'
                 dart --version
 
-                message 'does dart work ----  /bin/dart --version'
-                /bin/dart --version
+                # message 'does dart work ----  /bin/dart --version'
+                # /bin/dart --version
 
 
                 pwd
