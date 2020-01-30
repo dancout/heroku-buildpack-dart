@@ -133,7 +133,7 @@ pwd
 
 message "exporting path now"
 # export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
-export PATH="$PATH:`pwd/flutter/bin`" >> ~/.bashrc
+export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
 
 message "hopefully that worked"
 
