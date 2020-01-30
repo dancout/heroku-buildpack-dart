@@ -297,6 +297,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 message 'now delete the items we dont need, as the thing is already running?'
                 message 'rm web'
                 rm -rf web
+                message 'rm flutter'
+                rm -rf flutter
                 message 'going into build...'
                 cd build
                 for entry in *
