@@ -209,7 +209,9 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 
                 message 'Building with "flutter build web"'
                 #/app/dart-sdk/bin/pub build
-                flutter build web
+                # TODO: MAYBE ADD THIS BACK IN ================================================================================================
+                # TODO: YOU ARE REMOVING FLUTTER BUILD WEB HERE!!!! BIG MISTAKE IF IT'S A MISTAKE! ============================================
+                # flutter build web
                 message 'web app is built!'
                 
                 message "====== print all the entries in this folder A 2ND TIME ======"
