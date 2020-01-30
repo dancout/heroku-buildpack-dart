@@ -130,9 +130,6 @@ cd $BUILD_DIR
 
 pwd
 
-message 'removing web bc why not'
-rm -rf web
-
 
 message "exporting path now"
 # export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
@@ -293,7 +290,13 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
                 pwd
             # cd build
-                pwd
+                for entry in *
+                do
+                echo "$entry"
+                done
+                message 'now delete the items we dont need, as the thing is already running?'
+                message 'rm web'
+                rm -rf web
             # cd web
             ### MIGHT NEED TO REMOVE ME
                 break
