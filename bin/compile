@@ -305,7 +305,12 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
                 message 'copy the dart sdk here i guess'
                 # cp -r flutter/bin/cache/dart-sdk/bin /app
-                cp -r flutter/bin/cache/dart-sdk/bin $BUILD_DIR
+                cp -r flutter/bin/cache/dart-sdk $BUILD_DIR
+
+                message "exporting DART path now"
+                # export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
+                export PATH="$PATH:`pwd`/dart-sdk/bin" >> ~/.bashrc
+                source ~/.bashrc
 
                 message 'now delete the items we dont need, as the thing is already running?'
                 message 'rm web'
