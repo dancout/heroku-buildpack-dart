@@ -263,6 +263,14 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 do
                 echo "$entry"
                 done
+
+                message '==== lastly, lets take a look inside /flutter'
+                cd flutter
+                for entry in *
+                do
+                echo "$entry"
+                done
+                cd ..
              
 
                 message 'exporting dart path to bashrc'                
