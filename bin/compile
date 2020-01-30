@@ -132,7 +132,9 @@ pwd
 
 
 message "exporting path now"
-export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
+# export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
+export PATH="$PATH:`pwd`" >> ~/.bashrc
+
 message "hopefully that worked"
 
 message 'going to delete the examples folder'
@@ -149,10 +151,12 @@ message 'deleted flutter/.pub_cache folder'
 
 message 'going to delete the flutter/bin/cache/pkg folder'
 rm -rf flutter/bin/cache/pkg
+rm -rf cache/pkg
 message 'deleted flutter/bin/cache/pkg folder'
 
 message 'going to delete the flutter/bin/cache/artifacts folder'
 rm -rf flutter/bin/cache/artifacts
+rm -rf cache/artifacts
 message 'deleted flutter/bin/cache/artifacts folder'
 
 message "enabling flutter web here"
