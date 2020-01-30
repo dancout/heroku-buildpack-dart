@@ -212,6 +212,11 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 flutter build web
                 message 'web app is built!'
                 
+                message "====== print all the entries in this folder A 2ND TIME ======"
+                for entry in *
+                do
+                echo "$entry"
+                done
              
 
                 message 'exporting dart path to bashrc'                
