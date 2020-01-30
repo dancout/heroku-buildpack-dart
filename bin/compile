@@ -226,8 +226,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 message 'does dart work ----   dart --version'
                 dart --version
 
-                message 'does dart work ----   /flutter/bin/cache/dart-sdk/bin/dart --version --version'
-                /flutter/bin/cache/dart-sdk/bin/dart --version
+                message 'does dart work ----  /bin/dart --version'
+                /bin/dart --version
 
 
                 pwd
