@@ -66,8 +66,8 @@ curl -L -k https://storage.googleapis.com/flutter_infra/releases/dev/linux/flutt
 message "lets hope that worked"
 
 
-cp -r $CACHE_DIR/flutter/bin $BUILD_DIR
-cp -r $CACHE_DIR/flutter/bin /app
+cp -r $CACHE_DIR/flutter $BUILD_DIR
+cp -r $CACHE_DIR/flutter /app
 
 
 
@@ -133,7 +133,7 @@ pwd
 
 message "exporting path now"
 # export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
-export PATH="$PATH:`pwd`/bin" >> ~/.bashrc
+export PATH="$PATH:`pwd`/flutter/bin" >> ~/.bashrc
 
 message "hopefully that worked"
 
@@ -148,6 +148,10 @@ message 'deleted flutter/dev folder'
 message 'going to delete the .pub_cache folder'
 rm -rf flutter/.pub_cache
 message 'deleted flutter/.pub_cache folder'
+
+message 'going to delete the .github folder'
+rm -rf flutter/.github
+message 'deleted flutter/.github folder'
 
 message 'going to delete the flutter/bin/cache/pkg folder'
 rm -rf flutter/bin/cache/pkg
@@ -263,7 +267,7 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
                 message 'exporting dart path to bashrc'                
                 # export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
-                export PATH="$PATH:`pwd`/bin/cache/dart-sdk/bin" >> ~/.bashrc
+                export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
                 source ~/.bashrc
 
                 message 'path is:'
