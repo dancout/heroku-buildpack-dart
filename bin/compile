@@ -159,6 +159,11 @@ rm -rf flutter/bin/cache/artifacts
 rm -rf cache/artifacts
 message 'deleted flutter/bin/cache/artifacts folder'
 
+for entry in *
+do
+ echo "$entry"
+done
+
 message "enabling flutter web here"
 flutter config --enable-web
 message "assuming that flutter config --enable-web worked out"
@@ -257,7 +262,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
              
 
                 message 'exporting dart path to bashrc'                
-                export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
+                # export PATH="$PATH:`pwd`/flutter/bin/cache/dart-sdk/bin" >> ~/.bashrc
+                export PATH="$PATH:`pwd`/cache/dart-sdk/bin" >> ~/.bashrc
                 source ~/.bashrc
 
                 message 'path is:'
