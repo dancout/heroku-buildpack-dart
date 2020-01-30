@@ -160,7 +160,6 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
       message 'I_Did isa within this directory name. Run our flutter pub get and such.'
       cd $BUILD_DIR/$pub_dir
       pwd
-      message "*** Running flutter pub get"
 
       #/app/dart-sdk/bin/flutter pub --version
 
@@ -174,7 +173,7 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
       #start pub from the /app folder to have correct symlink paths
       #/app/dart-sdk/bin/flutter pub get
       #/app/flutter/bin/flutter pub get
-      flutter pub get
+
     
 
 
@@ -188,7 +187,10 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
     
 
         if [ -d "web" ]
-        then
+          message "*** Running flutter pub get"
+          flutter pub getthen
+
+
             message "*** Running flutter build web"
             if [[ -z "$DART_BUILD_CMD" ]]
             then
