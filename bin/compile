@@ -145,9 +145,9 @@ message 'going to delete the dev folder'
 rm -rf flutter/dev
 message 'deleted flutter/dev folder'
 
-message 'going to delete the .pub_cache folder'
-rm -rf flutter/.pub_cache
-message 'deleted flutter/.pub_cache folder'
+# message 'going to delete the .pub_cache folder'
+# rm -rf flutter/.pub_cache
+# message 'deleted flutter/.pub_cache folder'
 
 message 'going to delete the .github folder'
 rm -rf flutter/.github
@@ -315,8 +315,8 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
 
                 message 'now delete the items we dont need, as the thing is already running?'
            
-                message 'rm flutter'
-                rm -rf flutter
+                # message 'rm flutter'
+                # rm -rf flutter
                 message 'going into build...'
                 cd build
                 for entry in *
