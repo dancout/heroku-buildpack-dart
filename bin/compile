@@ -220,11 +220,11 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
     
 
 
-      #update PATH variable for pub-cache/bin folder
-      message "*** Updating PATH with pub-cache/bin folder"
+      # #update PATH variable for pub-cache/bin folder
+      # message "*** Updating PATH with pub-cache/bin folder"
 
-      export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
-      source ~/.bashrc
+      # export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
+      # source ~/.bashrc
 
 
     
@@ -271,6 +271,12 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
                 echo "$entry"
                 done
                 cd ..
+
+                 #update PATH variable for pub-cache/bin folder
+                message "*** Updating PATH with pub-cache/bin folder"
+
+                export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
+                source ~/.bashrc
              
 
                 message 'exporting dart path to bashrc'                
